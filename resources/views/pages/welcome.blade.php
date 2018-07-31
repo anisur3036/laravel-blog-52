@@ -1,4 +1,5 @@
 @extends('main')
+@section('title', 'Home')
 @section('content')
 <div class="row">
   <div class="col-md-12">
@@ -41,4 +42,9 @@
     <h2>Sidebar</h2>
   </div><!--  .col-md-3 col-md-offset-1 -->
 </div>
+@endsection
+@section('script')
+  <script>
+    console.log('Hello');
+  </script>
 @endsection
