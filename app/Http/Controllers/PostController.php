@@ -16,7 +16,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        return view('post.index');
+        $posts = Post::all();
+        return view('posts.index')->withPosts($posts);
     }
 
     /**
@@ -61,7 +62,8 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        return view('posts.show');
+        $post = Post::find($id);
+        return view('posts.show')->withPost($post);
     }
     /**
      * Show the form for editing the specified resource.
