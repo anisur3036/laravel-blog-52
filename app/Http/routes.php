@@ -11,16 +11,12 @@
 |
  */
 
-Route::get('/', function () {
-	return view('pages/welcome');
-});
+// Route::get('/', function () {
+// 	return view('pages/welcome');
+// });
 
-Route::get('/about', function () {
-	return view('pages.about');
-});
-
-Route::get('/contact', function () {
-	return view('pages.contact');
-});
-
+Route::get('/about', 'PageController@getAbout');
+Route::get('/contact', 'PageController@getContact');
+Route::get('/', 'PageController@getIndex');
+Route::get('/{post}', 'PageController@getSingle')->name('pages.single');
 Route::resource('posts', 'PostController');

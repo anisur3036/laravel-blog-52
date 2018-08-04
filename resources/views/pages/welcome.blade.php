@@ -14,27 +14,11 @@
 <div class="row">
   <div class="col-md-8">
     <div class="post">
-      <h3>Post Title</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem ducimus ut, voluptatem maiores, reprehenderit, temporibus optio laboriosam tempora quibusdam beatae iste ipsum dolores deserunt natus dolorum. Omnis impedit esse quos.</p>
-      <a href="#" class="btn btn-primary btn-sm">Read more..</a>
-    </div><!--  .post -->
-    <hr>
-    <div class="post">
-      <h3>Post Title</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem ducimus ut, voluptatem maiores, reprehenderit, temporibus optio laboriosam tempora quibusdam beatae iste ipsum dolores deserunt natus dolorum. Omnis impedit esse quos.</p>
-      <a href="#" class="btn btn-primary btn-sm">Read more..</a>
-    </div><!--  .post -->
-    <hr>
-    <div class="post">
-      <h3>Post Title</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem ducimus ut, voluptatem maiores, reprehenderit, temporibus optio laboriosam tempora quibusdam beatae iste ipsum dolores deserunt natus dolorum. Omnis impedit esse quos.</p>
-      <a href="#" class="btn btn-primary btn-sm">Read more..</a>
-    </div><!--  .post -->
-    <hr>
-    <div class="post">
-      <h3>Post Title</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem ducimus ut, voluptatem maiores, reprehenderit, temporibus optio laboriosam tempora quibusdam beatae iste ipsum dolores deserunt natus dolorum. Omnis impedit esse quos.</p>
-      <a href="#" class="btn btn-primary btn-sm">Read more..</a>
+      @foreach ($posts as $post)
+      <h3>{{ $post->title }}</h3>
+      <p>{{ substr($post->body, 0, 200) }}{{ strlen($post->body) > 50 ? "...": "" }}</p>
+      <a href="{{ route('pages.single', $post->id) }}" class="btn btn-primary btn-sm">Read more..</a>
+      @endforeach
     </div><!--  .post -->
     <hr>
   </div>
